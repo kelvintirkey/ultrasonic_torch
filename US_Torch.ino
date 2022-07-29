@@ -6,7 +6,6 @@
 
 long duration;
 int distance;
-int safetyDistance;
 
 
 void setup() {
@@ -34,8 +33,7 @@ duration = pulseIn(echoPin, HIGH);
 
 distance= duration*0.034/2;
 
-safetyDistance = distance;
-if (safetyDistance <= 30){
+if (distance <= 30){
   digitalWrite(buzzer, HIGH);
   digitalWrite(motorPin, HIGH);
 }
